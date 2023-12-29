@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+    <style>
+        body {
+            padding: 60px;
+            display: flex;
+            justify-content: center;
+            background-image: url("/images/best-menswear-stores-in-los-angeles.webp");
+            background-size: contain;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+        #container {
+            text-align: center;
+        }
+        h2 {
+            padding-top: 30px;
+            font-size: 30px;
+        }
+        .Form {
+            padding: 15px;
+            width: 200px;
+            height: 10px;
+        }
+        #formContainer {
+            text-align: center;
+            border-radius: 5px;
+            height: 500px; /* Adjusted height to accommodate more fields */
+            width: 400px;
+            margin: 0px 300px 200px 300px;
+            backdrop-filter: blur(5px);
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        #sub {
+            width: 260px;
+            height: 25px;
+            margin-top: 15px;
+            background-color: black;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        .error {
+            color: red;
+            margin: 0px;
+            text-align: left;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="formContainer">
+            <h2>Signup</h2>
+            <form action="#" onsubmit="return validateForm()">
+                <input type="text" class="Form" placeholder="First Name" id="firstname" ><br>
+                <p class="error" id="firstnameerror"></p>
+                <input type="text" class="Form" placeholder="Last Name" id="lastname"><br>
+                <p class="error" id="lastnameerror"></p>
+                <input type="text" class="Form" placeholder="Phone Number" id="phone"><br>
+                <p class="error" id="phoneerror"></p>
+                <input type="text" class="Form" placeholder="City" id="city"><br>
+                <p class="error" id="cityerror"></p>
+                <input type="text" class="Form" placeholder="Postal Code" id="postalcode"><br>
+                <p class="error" id="postalcodeerror"></p>
+                <input type="submit" id="sub" value="Signup">
+                <br>
+                <p style="color: black;">Already have an account? <a href="login.html" style="color: brown;">Login</a></p>
+            </form>
+        </div>
+    </div>
+    <script>
+        function validateForm() {
+            let firstname = document.getElementById("firstname");
+            let lastname = document.getElementById("lastname");
+            let phone = document.getElementById("phone");
+            let state = document.getElementById("state");
+            let city = document.getElementById("city");
+            let postalcode = document.getElementById("postalcode");
+
+            let flag = true;
+
+            if (firstname.value === "") {
+                document.getElementById("firstnameerror").innerHTML = "Empty First Name";
+                flag = false;
+            } else {
+                document.getElementById("firstnameerror").innerHTML = "";
+            }
+
+            if (lastname.value === "") {
+                document.getElementById("lastnameerror").innerHTML = "Empty Last Name";
+                flag = false;
+            } else {
+                document.getElementById("lastnameerror").innerHTML = "";
+            }
+
+            if (phone.value === "") {
+                document.getElementById("phoneerror").innerHTML = "Invalid Phone Number";
+                flag = false;
+            } else {
+                document.getElementById("phoneerror").innerHTML = "";
+            }
+
+            if (state.value === "") {
+                document.getElementById("stateerror").innerHTML = "Empty State";
+                flag = false;
+            } else {
+                document.getElementById("stateerror").innerHTML = "";
+            }
+
+            if (city.value === "") {
+                document.getElementById("cityerror").innerHTML = "Empty City";
+                flag = false;
+            } else {
+                document.getElementById("cityerror").innerHTML = "";
+            }
+
+            if (postalcode.value === "") {
+                document.getElementById("postalcodeerror").innerHTML = "Empty Postal Code";
+                flag = false;
+            } else {
+                document.getElementById("postalcodeerror").innerHTML = "";
+            }
+
+            return flag;
+        }
+    </script>
+</body>
+</html>

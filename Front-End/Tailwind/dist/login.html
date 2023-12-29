@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        body{
+            padding: 80px;
+            display: flex;
+            justify-content: center;
+            background-image: url("img/about/best-menswear-stores-in-los-angeles.webp");
+            background-size: contain;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+        #container{
+            text-align: center;
+        }
+        h2{
+            padding-top: 30px;
+            font-size: 30px;
+        }
+        .Form{
+            padding: 15px;
+            margin: 10px; 
+            width: 200px;
+            height: 10px;
+        }
+        #formContainer{
+            text-align: center;
+            border-radius: 5px;
+            height: 390px;
+            width: 330px;
+            margin: 100px 300px 200px 300px;
+            backdrop-filter: blur(5px);
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        #sub{
+            width: 236px;
+            height: 28px;
+            margin-top: 15px;
+            background-color: black;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        .error{
+            color: red;
+            margin: 0px;
+            text-align: left;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="formContainer">
+        <h2>Login</h2>
+        <form action="" onsubmit="return validateForm()">
+            <input type="text" class="Form" placeholder="User Name" id="username"><br>
+            <p class="error" id="usererror"></p>
+            <input type="password" class="Form" placeholder="Password" id="pass"><br>
+            <p class="error" id="passerror"></p>
+            <input type="submit" id="sub" value="Login">
+            <br>
+            <p style="color: black;">Didn't have an account? <a href="signup.html" style="color: brown;">Sign up</a> </p>
+        </form>
+        </div>
+    </div>
+<script>
+    let username = document.getElementById("username");
+    let Password = document.getElementById("pass");
+    let flag = 1;
+    function validateForm(){
+        if(username.value == ""){
+            document.getElementById("usererror").innerHTML = "Empty Username";
+            flag = 0;
+        }else if(username.value.length < 3){
+            document.getElementById("usererror").innerHTML = "Enter Atleast 3 Characters";
+            flag = 0;
+        }else{
+            document.getElementById("usererror").innerHTML = "";
+            flag = 1;
+        }
+        if(Password.value == ""){
+            document.getElementById("passerror").innerHTML = "Invalid Password";
+            flag = 0;
+        }else{
+            document.getElementById("usererror").innerHTML = "";
+            flag = 1;
+        }
+        if(flag){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+</script>
+ </body>
+</html>
